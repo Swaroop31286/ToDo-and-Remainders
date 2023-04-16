@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Manager Home</title>
+         <style>
+    .button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.button5 {
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+}
+
+.button5:hover {
+  background-color: black;
+  color: white;
+}
+    .Bimage{
+     background-image:url(#{request.contextPath}pic1.jpg);
+
+       
+ }
+ 	.message{
+   color:white;
+}
+	.box
+	{
+	background-color: black;
+    width: 270px;
+    border: 5px solid cyan;
+    padding: 10px;
+    margin: 125px;
+	}
+	
+    </style>
+  </h:head>
+    
+  <h:body style="background: url(pic1.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;">
+    
+    <h:messages globalOnly="true" />
+    <center>
+    <h3 style="color: green">View employees</h3>
+    <hr/>
+    <h3  style="color: black" align="center">View All Employees</h3>
+    
+    
+    <h:dataTable style="color: black" value="#{empBean.emplist}" var="row">
+
+    <h:column>
+        <f:facet name="header">Emp ID  </f:facet>
+           #{row.empid}
+    </h:column>
+    <h:column>
+        <f:facet name="header">Emp Name  </f:facet>
+           #{row.empname}
+    </h:column>
+
+      
+    </h:dataTable>
+    
+   </center>
+ <h:commandButton styleClass="button button5" value="Generate task" action="generatetask"/>
+ <h:commandButton styleClass="button button5" value="Back" onclick="history.back()"/>
+ 
+   
+  </h:body>
+</html>
+
+   

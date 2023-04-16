@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Insert Task</title>
+  </h:head>
+    
+  <h:body style="background: url(pic1.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;">
+    
+    <h:messages globalOnly="true" />
+    <center>
+    <h1 style="color:green">Insert Task</h1>
+    <hr/>
+   
+      <h:form>
+        <h:panelGrid columns="3">
+        
+          <h:outputLabel style="color:black">Task Name</h:outputLabel>
+          <h:inputText value="#{taskBean.taskname}" id="name" />
+          <br/>    
+          <h:outputLabel style="color:black">Task Target</h:outputLabel>
+          <h:inputText value="#{taskBean.tasktarget}" id="tasktarget" />
+          <br/>
+           <h:outputLabel style="color:black">Task progress</h:outputLabel>
+          <h:inputText value="#{taskBean.taskprogress}" id="taskprogress" />
+          <br/>   
+            
+          
+          <h:commandButton styleClass="button button5"  value="Insert" action="#{taskBean.inserttask()}"/>
+          <h:commandButton type="button" value="Back" onclick="history.back()"/>
+          
+        </h:panelGrid>
+      </h:form>
+      </center>
+    <br/>
+    <h:outputText style="color:red" value="#{taskBean.response}"></h:outputText>
+    
+    
+    
+    
+   
+  </h:body>
+</html>
+
+   

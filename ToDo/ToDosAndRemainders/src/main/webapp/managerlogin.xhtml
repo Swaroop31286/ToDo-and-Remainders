@@ -1,0 +1,71 @@
+<html xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<title> Manager login </title>
+<style>
+ .button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.button5 {
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+}
+
+.button5:hover {
+  background-color: black;
+  color: white;
+}
+    .Bimage{
+     background-image:url(#{request.contextPath}pic2.jpg);
+ }
+ 	.message{
+   color:white;
+}
+	.box
+	{
+	align:"right";
+	background-color: black;
+    width: 270px;
+    padding: 10px;
+    margin: 125px;
+	}
+    </style>
+
+</head>
+<h:body style="background: url(pic2.jpg) ">
+
+<center><h2>Manager login </h2></center>
+ <center>
+	      <h:form styleClass="box">
+	     
+	      <h3 class="message">Manager Login</h3>
+	      
+        <h:panelGrid columns="3">
+	      
+		          <h:outputLabel style="color:white">Manager ID:</h:outputLabel>
+		<h:inputText value="#{managerBean.mid}"/>
+		<br/><br/>
+		
+		          <h:outputLabel style="color:white">PASSWORD:</h:outputLabel>
+		<h:inputSecret label="Password" value="#{managerBean.mpwd}"/>
+		<br/><br/>
+		
+		<h:commandButton action="managerhome" value="login" styleClass="button button5" />
+		<h:commandButton styleClass="button button5" value="Back" onclick="history.back()"/>
+		<br/><br/>
+		</h:panelGrid>
+	</h:form>
+</center>
+</h:body>
+</html>
